@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浪浪之心臺灣動物協會</title>
+    <link rel="icon" href="images/logo-png.png" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/normalize.css">
+    <link rel="stylesheet" href="CSS/stylesheet.css">
+    <script src="https://kit.fontawesome.com/c810c1cc2c.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="js/jquery-3.6.3.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore-compat.js"></script>
+
+</head>
+
+<body class="single">
+    <!-- header -->
+    <header class="header-active">
+        <h1 class="logo"><a href="index.html"><img src="images/logo_scroll.png" alt=""></a></h1>
+        <nav class="nav nav-active">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="about.html" class="nav-item-link">關於我們</a></li>
+                <li class="nav-item"><a href="adopt.html" class="nav-item-link">我要認養</a></li>
+                <li class="nav-item"><a href="volunteer.html" class="nav-item-link">志工園地</a></li>
+                <li class="nav-item"><a href="#" class="nav-item-link">活動消息</a></li>
+                <li class="nav-item nav-donation"><button class="btn-primary-md"
+                        onclick="location.href='donate.html'">愛心捐款</button></li>
+                <li><a href="" class="toggle" id="toggle">Menu　<i class="fa-solid fa-bars"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <nav class="sidebar">
+            <ul class="sidebar-menu">
+                <li class="sidebar-item"><a class="sidebar-item-link" href="about.html"
+                        class="sidebar-item-link text-md-3">關於我們</a></li>
+                <li class="sidebar-item"><a class="sidebar-item-link" href="adopt.html"
+                        class="sidebar-item-link text-md-3">我要認養</a></li>
+                <li class="sidebar-item"><a class="sidebar-item-link" href="volunteer.html"
+                        class="sidebar-item-link text-md-3">志工園地</a></li>
+                <li class="sidebar-item"><a class="sidebar-item-link" href=""
+                        class="sidebar-item-link text-md-3">活動消息</a>
+                </li>
+                <li class="sidebar-item"><a class="sidebar-item-link" href="donate.html"
+                        class="sidebar-item-link text-md-3">愛心捐款</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- main -->
+    <div class="wrapper">
+        <div class="container">
+            <section class="page-top">
+                <div class="page-top-content">
+                    <h5 class="text-h4">志工 Volunteer</h5>
+                    <h3 class="text-h2">關懷化為行動<br>
+                        用熱忱守護浪浪</h3>
+                    <p class="text-md-1">鼓勵你們加入浪浪之心志工行列，讓動物們感受關懷與愛，用行動來實踐協會理念。</p>
+                </div>
+                <div class="page-top-img page-top-img-4"></div>
+            </section>
+            <section class="page-row">
+                <div class="page-row-title">
+                    <h4 class="text-h3">加入我們的行列！</h4>
+                    <p class="text-md-1">
+                        對動物充滿熱情，卻無處發揮嗎？浪浪之心協會正在強力招募志工！<br>
+                        多元豐富的服務內容讓擁有不同特質與專長的志工都能在這個大家庭找到合適的角色，一起為動物們付出與努力。</p>
+                </div>
+                <div class="total-area">
+                    <div class="cal-num">
+                        <p class="text-h4">至今為止招募了...</p>
+                        <p class="text-h3"><span data-end="3588" class="ppl cal-vol">3,588</span> 位志工</p>
+                    </div>
+                    <div class="cal-num">
+                        <p class="text-h4">在今年，我們舉辦了...</p>
+                        <p class="text-h3"><span data-end="267" class="ppl cal-event">258</span> 場活動</p>
+                    </div>
+                </div>
+                <div class="form-area">
+                    <form action="" id="volunteerForm">
+                        <div class="form-input">
+                            <label class="text-md-1" for="name"><span>＊</span> 姓名</label>
+                            <input type="text" name="name" id="name" placeholder="Ex: 王小華" required>
+                        </div>
+                        <div class="form-input">
+                            <label class="text-md-1" for="phone"><span>＊</span> 聯絡電話</label>
+                            <input type="text" name="phone" id="phone" placeholder="Ex: 0912345567" required>
+                        </div>
+                        <div class="form-input">
+                            <label class="text-md-1" for="email"><span>＊</span> 電子信箱</label>
+                            <input type="email" name="email" id="email" placeholder="Ex: aaa@hotmail.com" required>
+                        </div>
+                        <div class="form-input">
+                            <label class="text-md-1" for="message">提問箱</label>
+                            <textarea name="message" id="message" cols="20" rows="8"
+                                placeholder="歡迎提問（可於此處填寫您方便支援的時段）"></textarea>
+                        </div>
+                        <div class="btn-middle">
+                            <button class="btn-primary-lg" type="submit" id="submit">立刻報名</button>
+                        </div>
+                    </form>
+                    <div class="letter">
+                        <p class="text-md-1">
+                            給有意願加入熱血志工團的你/妳：<br>
+                            <br>
+                            我們的服務項目分為【週末送養志工】、【園區打掃志工】、【市集服務志工】、【救援行動志工】四大類，您可以在報名表單上勾選任何感興趣的組別，我們將安排梯次為所有夥伴上教育課程，課程結束後會再依照您的學習狀況、志工經驗分發到正式單位！<br>
+                            <br>
+                            報名成功後，系統會自動發送Email到您的信箱，請回覆小天使您方便參與教育課程的時間。<br>
+                            <br>
+                            擔任志工不是一件輕鬆的事情，服務過程中，您可能會被犬貓飛撲、抓傷，身上的衣物因此而變髒。但是，只要提早有上述的認知，加入志工團隊絕對是一件很棒的事情，能運用自身力量，建立流浪犬貓對人類的信任、幫助牠們學習與人相處，您將會是牠們生命中不可或缺的存在。<br>
+                            <br>
+                            因此，若您做好準備了，我們隨時歡迎您的加入！
+                        </p>
+                    </div>
+                    <img src="images/volunteer.png" alt="" class="volunteer-img">
+                </div>
+                <div class="page-row-title">
+                    <h4 class="text-h3">常見問題</h4>
+                </div>
+                <div class="FQA">
+                    <div class="question-area">
+                        <p class="text-md-1"><span>1　</span>當志工需要定期捐款贊助嗎？</p>
+                        <a href="" class="Q1"><i class="fa-solid fa-plus"></i></a>
+                    </div>
+                    <div class="ans-area A1">
+                        <p class="text-md-1">不用。</p>
+                    </div>
+                    <div class="question-area">
+                        <p class="text-md-1"><span>2　</span>不小心送出報名表單了！還能修改或刪除嗎？</p>
+                        <a href="" class="Q2"><i class="fa-solid fa-plus"></i></a>
+                    </div>
+                    <div class="ans-area A2">
+                        <p class="text-md-1">可以。</p>
+                    </div>
+                    <div class="question-area">
+                        <p class="text-md-1"><span>3　</span>如果只有假日有空當志工，也能夠報名嗎？</p>
+                        <a href="" class="Q3"><i class="fa-solid fa-plus"></i></a>
+                    </div>
+                    <div class="ans-area A3">
+                        <p class="text-md-1">可以。</p>
+                    </div>
+                    <div class="question-area">
+                        <p class="text-md-1"><span>4　</span>我對貓毛或狗毛過敏，我適合擔任志工嗎？</p>
+                        <a href="" class="Q4"><i class="fa-solid fa-plus"></i></a>
+                    </div>
+                    <div class="ans-area A4">
+                        <p class="text-md-1">不適合。</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <img src="images/footer-dog.png" alt="" class="footer-dog">
+            <div class="footer-logo"><img src="images/logo_footer.png" alt=""></div>
+            <div class="footer-info">
+                <h6 class="text-h5">Contact Us</h6>
+                <div class="footer-link">
+                    <p class="text-md-3"><img src="images/Icon-location.png" alt="">台北市大安區瑞安街135巷22號</p>
+                    <p class="text-md-3"><img src="images/Icon-phone.png" alt="">03-3329-2900</p>
+                    <p class="text-md-3"><img src="images/Icon-time.png" alt="">週二至週日：10:00-17:00</p>
+                </div>
+            </div>
+            <div class="footer-info">
+                <h6 class="text-h5">Quick Links</h6>
+                <div class="footer-link">
+                    <a href="donate.html" class="text-md-3">愛心捐款</a>
+                    <a href="adopt.html" class="text-md-3">待領養動物</a>
+                    <a href="volunteer.html" class="text-md-3">加入志工行列</a>
+                </div>
+            </div>
+            <div class="footer-icon">
+                <img src="images/footer-fb.png" alt="" class="footer-icon-item">
+                <img src="images/footer-ig.png" alt="" class="footer-icon-item">
+                <img src="images/footer-mail.png" alt="" class="footer-icon-item">
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p class="text-sm">Copyright © RanRan Heart Of Animal Shelter All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(() => {
+            $('.toggle').click(function () {
+                //避免 a 標籤會觸發
+                event.preventDefault();
+                //展開或收起來
+                $('.sidebar').slideToggle(600);
+                $("i", this).toggleClass("fa-caret-up fa-xmark");
+            })
+        })
+
+        $(document).ready(() => {
+            $('.Q1').click(function () {
+                //避免 a 標籤會觸發
+                event.preventDefault();
+                //展開或收起來
+                $('.A1').slideToggle(400);
+                $("i", this).toggleClass("fa-plus fa-minus");
+            })
+        })
+
+        $(document).ready(() => {
+            $('.Q2').click(function () {
+                //避免 a 標籤會觸發
+                event.preventDefault();
+                //展開或收起來
+                $('.A2').slideToggle(400);
+                $("i", this).toggleClass("fa-plus fa-minus");
+            })
+        })
+
+        $(document).ready(() => {
+            $('.Q3').click(function () {
+                //避免 a 標籤會觸發
+                event.preventDefault();
+                //展開或收起來
+                $('.A3').slideToggle(400);
+                $("i", this).toggleClass("fa-plus fa-minus");
+            })
+        })
+
+        $(document).ready(() => {
+            $('.Q4').click(function () {
+                //避免 a 標籤會觸發
+                event.preventDefault();
+                //展開或收起來
+                $('.A4').slideToggle(400);
+                $("i", this).toggleClass("fa-plus fa-minus");
+            })
+        })
+
+        let start = { val: 0 };
+        gsap.utils.toArray('.ppl').forEach(function (label) {
+            start.val = 0;
+            // 這個作法的目的是歸零 start 的起始值，讓它可以重複利用
+            gsap.to(start, {
+                // 這裡需要注意的是，要變化的是 start.val 的數值，而不是改變 label 的物件
+                duration: 3.5,
+                scrollTrigger: {
+                    // 設定觸發條件
+                    trigger: label,
+                    // 以當前的 label 作為觸發條件
+                    toggleActions: "play none none none",
+                    // 不需要有任何回溯的效果，所以只有單向的 play
+                    start: "bottom center",
+                    // 當觸發選擇器的頂端碰到檢視區正中間時啟用
+
+                },
+                val: label.dataset.end,
+                // 選取 data-end 資料屬性的值作為終點
+                onUpdate: (function () {
+                    label.innerHTML = Math.floor(Number(start.val));
+                    // 當 val 數值變更時，用 Math.floor 讓數字以整數形式呈現。
+                })
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            firebase.initializeApp({
+                apiKey: "AIzaSyCvtwfXVb6lkWrWoijRqzKynT0wW8ZFuGE",
+                authDomain: "ranran-stray-animal-shelter.firebaseapp.com",
+                databaseURL: "https://ranran-stray-animal-shelter-default-rtdb.firebaseio.com",
+                projectId: "ranran-stray-animal-shelter",
+                storageBucket: "ranran-stray-animal-shelter.appspot.com",
+                messagingSenderId: "27489907527",
+                appId: "1:27489907527:web:1899b873f04a15d2cf9262"
+            });
+
+            let db = firebase.firestore();
+
+            let volunteerRef = db.collection("volunteers");
+
+            // 監聽表單 Submit 的事件
+            document.getElementById('volunteerForm').addEventListener('submit', submitForm);
+
+            // 送出表單
+            function submitForm(e) {
+                e.preventDefault();
+
+                // 取得 input 欄位中的值
+                var name = getInputVal('name');
+                var email = getInputVal('email');
+                var phone = getInputVal('phone');
+                var message = getInputVal('message');
+
+                // 儲存資料
+                saveMessage(name, email, phone, message);
+
+                // 清除表單
+                document.getElementById('volunteerForm').reset();
+            };
+
+            // Function to get get form values
+            function getInputVal(id) {
+                return document.getElementById(id).value;
+            };
+
+            // 將資料送進 Firebase 資料庫中
+            function saveMessage(name, company, email, phone, message) {
+                volunteerRef.add({
+                    "name": document.getElementById("name").value,
+                    "phone": document.getElementById("phone").value,
+                    "email": document.getElementById("email").value,
+                    "message": document.getElementById("message").value
+                }).then(() => {
+                    window.alert('報名成功！');
+                });
+            };
+        })
+    </script>
+
+</body>
+
+</html>
