@@ -1,5 +1,6 @@
 # RanRan-AnimalShelter 🐶
-> 完整作品說明簡報 [請點我](https://www.canva.com/design/DAFRRVLC4-s/xWuG-IWxEOnrlxORGrZtfQ/view?utm_content=DAFRRVLC4-s&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
+> 網頁切版成果 [Git Page](https://millieqiu.github.io/RanRan-AnimalShelter/) | 
+> 完整專案內容 [Canva 簡報](https://www.canva.com/design/DAFRRVLC4-s/xWuG-IWxEOnrlxORGrZtfQ/view?utm_content=DAFRRVLC4-s&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 ### 一、專案背景
 在瀏覽各大收容所或中途之家的網站時，深覺許多頁面的資訊層級不夠清晰，致使操作上帶來諸多不便。<br>
 本次以愛護動物、協助流浪犬貓的角度為出發點，建立一個可宣揚自身理念、也可協助媒合領養人與待領養動物的平台。
